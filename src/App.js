@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useState } from "react";
+import Data from "./Data";
+import Card from "./Card";
+ 
+const App = () => {
+  const [item, setItem] = useState(Data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container-fluid">
+        <div className="row">
+          <h1 className="col-12 text-center my-3 fw-bold">Our Menu</h1>
+          <Card item={item} /> 
+        </div>
+      </div>
+    </>
   );
-}
-
+};
+ 
 export default App;
